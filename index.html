@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <!-- Inline style for project image consistency and canvas -->
+    <style>
+      .project-img,
+      .project-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+      #profile {
+        position: relative; /* Ensure canvas is positioned relative to this section */
+        overflow: hidden; /* Prevent canvas overflow */
+      }
+      #background-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place canvas behind content */
+      }
+      .section__pic-container,
+      .section__text {
+        position: relative; /* Ensure content is above canvas */
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Pawan Bhattarai</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Pawan Bhattarai</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#profile" onclick="toggleMenu()">Profile</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile" style="background-image: url('./assets/Backgroun.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <canvas id="background-canvas"></canvas>
+      <div class="section__pic-container">
+        <img
+          src="./assets/PROFILE_PIC.jpg" 
+          alt="Pawan Bhattarai profile picture" 
+          style="width: 250px; height: 250px; object-fit: cover; border-radius: 50%; border: 4px solid #333;" 
+        />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">ABOUT ME</p>
+        <h1 class="title">Pawan Bhattarai</h1>
+        <p class="section__text__p2">Structural Engineer / PolyMath</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/Resume.pdf')">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+        </div>
+        <div id="socials-container">
+          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='http://www.linkedin.com/in/pawanbhattarai2'" />
+          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/Punct-paw'" />
+          <img src="./assets/researchgate.png" alt="My ResearchGate profile" class="icon" onclick="location.href='https://www.researchgate.net/profile/Pawan-Bhattarai'" />
+          <img src="./assets/googlescholar.png" alt="My Google Scholar profile" class="icon" onclick="location.href='https://scholar.google.com/citations?user=jjBaPnYAAAAJ&hl=en'" />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/PROFILE-PIC2.jpg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>9+ years <br />Structural Engineering</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B.Sc. Bachelors Degree in Civil Engineering from Pulchowk Campus (81.96%)<br />M.Sc. Masters Degree in Civil Engineering from Idaho State University (4.00 GPA)</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              Passionate about mathematics, programming, and structural engineering — exploring the intersection of analytical thinking and practical design to build efficient, innovative solutions
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container scroll-container">
+            <h2 class="experience-sub-title">Careers</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Bridge/Structural Engineer (CURRENT-JAN 2025)</h3>
+                  <p>ArDOT (Arkansas Department of Transportation)</p>
+                  <p>As a Bridge Engineer at ArDOT, I am working on a variety of projects encompassing the complete design of bridges, retaining walls, and some miscellaneous structural projects. I am also utilizing Python, VBA, and LaTeX coding to automate design works.</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Graduate Teaching Assistant (DEC 2024-AUG 2023)</h3>
+                  <p>Idaho State University</p>
+                  <p>Tutoring courses such as Engineering Graphics (AutoCAD), Surveying, and Statics. Working on a project related to using CFRP and GFRP in slab-wall connections. Performed compression tests to carry out the stress-strain analysis of sustainable materials in concrete using ASCE and ACI codes.</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Civil Engineer/Project Manager (AUG 2023-DEC 2022)</h3>
+                  <p>Kathmandu Metropolitan City Office, Nepal</p>
+                  <p>Worked on building and bridge projects, creating drawings and specifications, conducting estimates, performing calculations, writing reports, and frequently visiting sites. Utilized software including AutoCAD, ANSYS, Staad Pro, Revit, Civil 3D, etc. Worked closely with different authorities including governmental, private sectors, and local people.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container scroll-container">
+            <h2 class="experience-sub-title">Publications</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <p>Bhattarai, P., Cantrell, J., Wakjira, T. G., & Mashal, M. (2025). Stress-Strain Behavior of Confined Green Concrete. In IABSE Symposium: Environmentally Friendly Technologies and Structures: Focusing on Sustainable Approaches, Tokyo, Japan, 18-21 May 2025 (pp. 244-250).</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <p>Rajbhandari, S., Bhattarai, P., Sharma, K., Wakjira, T. G., Mashal, M., & Cantrell, J. (2025). Sustainable Concrete with Dairy Wastewater: A State-of-the-Art Review. In IABSE Symposium: Environmentally Friendly Technologies and Structures: Focusing on Sustainable Approaches, Tokyo, Japan, 18-21 May 2025 (pp. 265-272).</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <p>Bhattarai, P. (2024). Stress-Strain Behavior of Confined Green Concrete With Precipitated Calcium Carbonate and Upcycled Concrete Aggregate (Master's thesis, Idaho State University).</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <p>Tamang, T., Ramtel, P., Thapa, S., Thapa, D., Bhattarai, P., & Shrestha, J. K. (2023). Qualitative evaluation of reconstructed masonry residential building after the Gorkha earthquake 2015 in rural areas of Nepal: A case study at Bhalche, Nuwakot. Journal of the Institute of Engineering, 17(1), 38-52.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <img
+          src="./assets/arrow.png"
+          alt="Arrow icon"
+          class="icon arrow"
+          onclick="location.href='./#projects'"
+        />
+      </section>
+      <section id="projects">
+        <p class="section__text__p1">Projects I've worked on in my career and where I am very proud of I must say</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+          <div class="about-containers horizontal-scroll-container">
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="./assets/Master_Thesis.JPG" alt="Project 1" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Graduate Project</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.proquest.com/openview/8097216abbd470de57fa44498e2921ee/1?pq-origsite=gscholar&cbl=18750&diss=y'">Link</button>
+              </div>
+              <p class="project-description">Analyzed the stress-strain behavior of confined green concrete as part of my Master's thesis project.</p>
+            </div>
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="./assets/Undergrad_Thesis.png" alt="Project 2" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Undergraduate Project</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.researchgate.net/publication/390493318_Design_of_Bridge_over_SatiKhola_Palung_Makawanpur'">Link</button>
+              </div>
+              <p class="project-description">Designed a T-beam concrete bridge using the Limit State Approach.</p>
+            </div>
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img src="./assets/Horizontal_Curve_Project.png" alt="Project 3" class="project-img" />
+              </div>
+              <h2 class="experience-sub-title project-title">Horizontal Curve</h2>
+              <div class="btn-container">
+                <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/Punct-paw/Horizontal-Circular-Curve'">Github</button>
+              </div>
+              <p class="project-description">Python code for visualization of horizontal circular curves.</p>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 1rem;">
+            <button onclick="location.href='more_projects.html'" class="btn btn-color-2">See More</button>
+          </div>
+        </div>
+      </section>
+      <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+          <div class="contact-info-container">
+            <img
+              src="./assets/email.png"
+              alt="Email icon"
+              class="icon contact-icon email-icon"
+            />
+            <p><a href="mailto:pawanbhattarai0123@gmail.com">Pawanbhattarai0123@gmail.com</a></p>
+          </div>
+          <div class="contact-info-container">
+            <img
+              src="./assets/linkedin.png"
+              alt="LinkedIn icon"
+              class="icon contact-icon"
+            />
+            <p><a href="http://www.linkedin.com/in/pawanbhattarai2">LinkedIn</a></p>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <nav>
+          <div class="nav-links-container">
+            <ul class="nav-links">
+              <li><a href="#profile">Profile</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+        <p>Copyright &#169; 2023 Pawan Bhattarai. All Rights Reserved.</p>
+      </footer>
+      <script src="script.js"></script>
+      <script>
+        // Canvas animation for bouncing balls in the profile section
+        const canvas = document.getElementById('background-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to match the profile section
+        function resizeCanvas() {
+          canvas.width = canvas.offsetWidth;
+          canvas.height = canvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Ball properties
+        const BALL_COLORS = [
+          'rgba(255, 0, 0, 0.3)',   // Red, semi-transparent
+          'rgba(0, 255, 0, 0.3)',   // Green, semi-transparent
+          'rgba(0, 0, 255, 0.3)',   // Blue, semi-transparent
+          'rgba(255, 255, 0, 0.3)'  // Yellow, semi-transparent
+        ];
+        const balls = [];
+
+        // Ball class equivalent
+        class Ball {
+          constructor(x, y, radius, color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+            this.dx = [3, 4][Math.floor(Math.random() * 2)] * (Math.random() < 0.5 ? 1 : -1); // Random speed: 3 or 4
+            this.dy = [3, 4][Math.floor(Math.random() * 2)] * (Math.random() < 0.5 ? 1 : -1);
+          }
+
+          move() {
+            this.x += this.dx;
+            this.y += this.dy;
+
+            // Bounce off walls
+            if (this.x - this.radius <= 0 || this.x + this.radius >= canvas.width) {
+              this.dx *= -1;
+            }
+            if (this.y - this.radius <= 0 || this.y + this.radius >= canvas.height) {
+              this.dy *= -1;
+            }
+          }
+
+          draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+          }
+        }
+
+        // Create ten balls at random positions
+        for (let i = 0; i < 10; i++) {
+          const x = Math.random() * (canvas.width - 60) + 30; // Keep balls within bounds
+          const y = Math.random() * (canvas.height - 60) + 30;
+          const color = BALL_COLORS[i % BALL_COLORS.length]; // Cycle through colors
+          balls.push(new Ball(x, y, 10, color));
+        }
+
+        // Animation loop
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          balls.forEach(ball => {
+            ball.move();
+            ball.draw();
+          });
+          requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        animate();
+      </script>
+    </body>
+</html>
